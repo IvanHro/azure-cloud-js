@@ -12,6 +12,8 @@
     "lint": "eslint --ignore-path .gitignore --fix src",
     "prettier": "prettier src --write",
     "client:deploy": "sls client deploy --no-config-change --no-policy-change --no-cors-change",
+    "client:deploy:azure": "az storage blob upload-batch --account-name stgsandfrontendnev1ivan -d $web -s ./dist",
+    "client:deploy:azure:overwrite": "az storage blob upload-batch --account-name stgsandfrontendnev1ivan -d $web -s ./dist --overwrite",
     "client:deploy:nc": "npm run client:deploy -- --no-confirm",
     "client:build:deploy": "npm run build && npm run client:deploy",
     "client:build:deploy:nc": "npm run build && npm run client:deploy:nc",
